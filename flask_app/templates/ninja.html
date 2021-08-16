@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Ninjas </title>
+</head>
+<body>
+    <div class="container mt-4">
+        <form action="/create/ninja" method="post">
+        <h1>New Ninja</h1>
+            <label class="my-2" for="dojo">Dojo:</label>
+            <select class="ms-5" name="dojo_id">
+                {% for tree in dojos %}
+                    <option value="{{tree.id}}">{{tree.name}}</option>
+                {% endfor %}
+            </select>
+            <div class="my-3">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name">
+            </div>
+            <div class="my-3">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name">
+            </div>
+            <div class="my-3">
+                <label for="age">Age:</label>
+                <input class="ms-5" type="text" name="age">
+            </div>
+            <input class="ms-5 mb-5 btn-info" type="submit" value="Create Ninja">
+        </form>
+        <a href="/dojos">Home</a>
+    </div>
+</body>
+</html>
